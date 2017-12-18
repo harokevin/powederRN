@@ -11,7 +11,7 @@ export default class Report extends React.Component {
   componentDidMount() {
     this.setState( prevState => {
       let value = this.props.value;
-      return { name: value.name, overnight: value.Overnight.Summit, _24_Hours: value["24 hrs"].Summit, _48_Hours: value["48 hrs"].Summit };
+      return { name: value.name, overnight: value.Overnight.summit, _24_Hours: value["24 hrs"].summit, _48_Hours: value["48 hrs"].summit };
     });
   }
 
