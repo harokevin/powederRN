@@ -1,5 +1,6 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import Report from './Report';
 
 export default class App extends React.Component {
 
@@ -60,75 +61,11 @@ export default class App extends React.Component {
     return(
       <View style={styles.container}>
 
-        <View style={{width:450, height: 140, paddingBottom: 5}}>
-          <Text style={{textAlign:'center'}}>{this.state.name}</Text>
-          <View style={{flex: 1, flexDirection: 'row'}} >
-            <View style={{flex:1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>Overnight</Text></View>
-            <View style={{flex:1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>24 Hours</Text></View>
-            <View style={{flex:1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>48 Hours</Text></View>
-          </View>
-          <View style={{flex: 2, flexDirection: 'row'}}>
-            <View style={{flex: 1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state.Overnight}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._24_Hours}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._48_Hours}</Text></View>
-          </View>
-        </View>
-
-        <View style={{width:450, height: 140, paddingBottom: 5}}>
-          <Text style={{textAlign:'center'}}>{this.state.name}</Text>
-          <View style={{flex: 1, flexDirection: 'row'}} >
-            <View style={{flex:1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>Overnight</Text></View>
-            <View style={{flex:1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>24 Hours</Text></View>
-            <View style={{flex:1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>48 Hours</Text></View>
-          </View>
-          <View style={{flex: 2, flexDirection: 'row'}}>
-            <View style={{flex: 1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state.Overnight}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._24_Hours}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._48_Hours}</Text></View>
-          </View>
-        </View>
-
-        <View style={{width:450, height: 140, paddingBottom: 5}}>
-          <Text style={{textAlign:'center'}}>{this.state.name}</Text>
-          <View style={{flex: 1, flexDirection: 'row'}} >
-            <View style={{flex:1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>Overnight</Text></View>
-            <View style={{flex:1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>24 Hours</Text></View>
-            <View style={{flex:1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>48 Hours</Text></View>
-          </View>
-          <View style={{flex: 2, flexDirection: 'row'}}>
-            <View style={{flex: 1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state.Overnight}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._24_Hours}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._48_Hours}</Text></View>
-          </View>
-        </View>
-
-        <View style={{width:450, height: 140, paddingBottom: 5}}>
-          <Text style={{textAlign:'center'}}>{this.state.name}</Text>
-          <View style={{flex: 1, flexDirection: 'row'}} >
-            <View style={{flex:1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>Overnight</Text></View>
-            <View style={{flex:1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>24 Hours</Text></View>
-            <View style={{flex:1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>48 Hours</Text></View>
-          </View>
-          <View style={{flex: 2, flexDirection: 'row'}}>
-            <View style={{flex: 1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state.Overnight}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._24_Hours}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._48_Hours}</Text></View>
-          </View>
-        </View>
-
-        <View style={{width:450, height: 140, paddingBottom: 5}}>
-          <Text style={{textAlign:'center'}}>{this.state.name}</Text>
-          <View style={{flex: 1, flexDirection: 'row'}} >
-            <View style={{flex:1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>Overnight</Text></View>
-            <View style={{flex:1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>24 Hours</Text></View>
-            <View style={{flex:1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>48 Hours</Text></View>
-          </View>
-          <View style={{flex: 2, flexDirection: 'row'}}>
-            <View style={{flex: 1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state.Overnight}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'skyblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._24_Hours}</Text></View>
-            <View style={{flex: 1, backgroundColor: 'steelblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>{this.state._48_Hours}</Text></View>
-          </View>
-        </View>
+        <Report style={styles.report} value={this.state.resort}/>
+        <Report style={styles.report} value={this.state.resort}/>
+        <Report style={styles.report} value={this.state.resort}/>
+        <Report style={styles.report} value={this.state.resort}/>
+        <Report style={styles.report} value={this.state.resort}/>
 
       </View>
     );
@@ -137,11 +74,17 @@ export default class App extends React.Component {
 }
 
 const styles = StyleSheet.create({
+  report: {
+    width:450,
+    height: 140,
+    paddingBottom: 10
+  },
+
   container: {
     flex: 1,
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 40
+    paddingTop: 150
   },
 });
