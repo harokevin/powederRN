@@ -1,6 +1,7 @@
 import React from 'react';
 import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import Report from './Report';
+import WhitePassReport from './WhitePassReport';
 
 const BASE_URL = "https://www.parsehub.com";
 const PROJECT_TOKEN = "tYRR9MB_cbfM";
@@ -17,6 +18,35 @@ export default class App extends React.Component {
     this.state = { isLoading: true };
   }
 
+  parseMissionRidge(responseJson) {
+    let js = responseJson;
+    let mr = js.MissionRidge;
+
+    let resort = {};
+    resort.name = "Mission Ridge";
+    resort.metrics = [];
+    let i = 0;
+    for (i=0; i < mr.length; i++) {
+        metric = mr[i];
+        metric_name = metric.metric;
+        if (["48 hrs", "24 hrs", "Overnight"].includes(metric_name) == false) {
+            continue;
+        }
+        let mobj = new Object();
+        mobj.name = metric.metric;
+        mobj.base = metric.base;
+        mobj.summit = metric.summit;
+        mobj.midway = metric.midway;
+        resort[metric_name] = mobj;
+        resort.metrics.push(metric_name);
+    }
+    return resort;
+  }
+
+  parseWhitePass(responseJson) {
+    return responseJson.WhitePass[0];
+  }
+
   componentDidMount() {
 
     this.setState({ isLoading: true});
@@ -31,31 +61,16 @@ export default class App extends React.Component {
       })
       .then((responseJson) => {
 
+        console.log(responseJson);
+
         if (responseJson) {
-          let js = responseJson;
-          console.log(responseJson);
-          let mr = js.MissionRidge;
+          let missionRidgeReport = this.parseMissionRidge(responseJson);
 
-          let resort = {};
-          resort.name = "Mission Ridge";
-          resort.metrics = [];
-          let i = 0;
-          for (i=0; i < mr.length; i++) {
-              metric = mr[i];
-              metric_name = metric.metric;
-              if (["48 hrs", "24 hrs", "Overnight"].includes(metric_name) == false) {
-                  continue;
-              }
-              let mobj = new Object();
-              mobj.name = metric.metric;
-              mobj.base = metric.base;
-              mobj.summit = metric.summit;
-              mobj.midway = metric.midway;
-              resort[metric_name] = mobj;
-              resort.metrics.push(metric_name);
-          }
+          let whitePassReport = this.parseWhitePass(responseJson);
 
-          this.setState({ response_ok: true, isLoading: false, resort: resort });
+          let report = { missionRidge: missionRidgeReport, whitePass: whitePassReport }
+
+          this.setState({ response_ok: true, isLoading: false, report: report });
 
         } else {
 
@@ -87,11 +102,12 @@ export default class App extends React.Component {
       return(
         <View style={styles.container}>
 
-          <Report style={styles.report} value={this.state.resort}/>
-          <Report style={styles.report} value={this.state.resort}/>
-          <Report style={styles.report} value={this.state.resort}/>
-          <Report style={styles.report} value={this.state.resort}/>
-          <Report style={styles.report} value={this.state.resort}/>
+          <Report style={styles.report} value={this.state.report.missionRidge}/>
+          <WhitePassReport style={styles.report} value={this.state.report.whitePass}/>
+          <Report style={styles.report} value={this.state.report.missionRidge}/>
+          <Report style={styles.report} value={this.state.report.missionRidge}/>
+          <Report style={styles.report} value={this.state.report.missionRidge}/>
+          <Report style={styles.report} value={this.state.report.missionRidge}/>
 
         </View>
       );
@@ -124,6 +140,6 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
-    paddingTop: 150
+    paddingTop: 425
   },
 });

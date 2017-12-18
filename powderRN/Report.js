@@ -1,5 +1,5 @@
 import React from 'react';
-import { ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { Text, View } from 'react-native';
 
 export default class Report extends React.Component {
 
@@ -18,7 +18,7 @@ export default class Report extends React.Component {
   render() {
 
     return(
-      <View style={{width:450, height: 140, paddingBottom: 5, paddingTop: 20}}>
+      <View style={{width:450, height: 140, paddingBottom: 20}}>
         <Text style={{textAlign:'center'}}>{this.state.name}</Text>
         <View style={{flex: 1, flexDirection: 'row'}} >
           <View style={{flex:1, backgroundColor: 'powderblue', justifyContent:'center'}}><Text style={{textAlign:'center'}}>Overnight</Text></View>
@@ -34,9 +34,3 @@ export default class Report extends React.Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1
-  },
-});
